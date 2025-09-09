@@ -17,17 +17,19 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
-        $this->call([
-            UserSeeder::class,
-            CitiesSeeder::class,
-            PackagingSeeder::class,
-            RegionsSeeder::class,
-            StatusListSeeder::class,
-            TypesOfShipmentsSeeder::class,
-            YesOrNoSeeder::class,
-        ]);
+        // Avval Regions
+        $this->call(RegionsSeeder::class);
+
+        // Keyin Cities
+        $this->call(CitiesSeeder::class);
+
+        // Qolgan seederlar
+        $this->call(UserSeeder::class);
+        $this->call(TypesOfShipmentsSeeder::class);
+        $this->call(PackagingSeeder::class);
+        $this->call(YesOrNoSeeder::class);
+        $this->call(StatusListSeeder::class);
     }
 }
